@@ -1,14 +1,14 @@
 // All text on the site lives here. Edit this file, rebuild, redeploy.
-// Source: Faith's own CV pages. Empty contact fields stay hidden.
+// Source: Faith's own CV pages and the professional profile supplied in Nov 2026. Empty contact fields stay hidden.
 
 export const person = {
-  name: "Faith Mbaire Ng'ethe",
-  eyebrow: "Expert practitioner and trainer",
+  name: "Faith Mbaire Ngethe",
+  eyebrow: "Advocate, company secretary and governance professional",
   focus: [
-    "Anti-corruption",
-    "Asset tracing and recovery",
-    "Financial crimes investigations",
-    "Corporate governance and compliance advisory",
+    "Anti-corruption and public accountability",
+    "Asset recovery and legal enforcement",
+    "Arbitration and dispute resolution",
+    "Governance and international cooperation",
   ],
   role: "Assistant Director, Asset Recovery",
   org: "Ethics and Anti-Corruption Commission",
@@ -31,8 +31,9 @@ export const services = [
 ]
 
 export const overview = [
-  "An expert in the anti-corruption and economic crimes field, actively engaged in drafting proposals and concept papers; developing training materials and training in financial investigations, asset tracing and recovery, money laundering and financial crimes; training in good governance and ethics; and developing policies, guidelines and SOPs.",
-  "Also an experienced litigator in the recovery of corruptly acquired public property in Kenya.",
+  "Faith Mbaire Ngethe is a Kenyan advocate, company secretary and governance professional whose career spans public service, legal practice, anti-corruption and institutional leadership.",
+  "She has held senior positions at the Ethics and Anti-Corruption Commission (EACC), where her work has included asset recovery, legal enforcement and public accountability. She is also involved in arbitration and dispute resolution, with professional experience extending to international cooperation on governance and anti-corruption matters.",
+  "Her career reflects longstanding engagement with Kenya's legal, regulatory and public governance institutions.",
 ]
 
 export const stats = [
@@ -75,7 +76,7 @@ export const training = [
 ]
 
 export const skills = [
-  "Anti-corruption", "Assets recovery", "Civil litigation", "Litigation", "Corporate governance", "Corporate law",
+  "Anti-corruption", "Assets recovery", "Public accountability", "Arbitration", "Company secretarial practice", "Civil litigation", "Litigation", "Corporate governance", "Corporate law",
   "Ethics compliance", "Legal compliance", "Legal research", "Legal writing", "Legal advice", "Legal services",
   "Legal affairs", "Legal assistance", "Criminal law", "International law", "Real estate", "Courts",
   "Alternative dispute resolution", "Mediation", "Teacher training", "Problem solving",

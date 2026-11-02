@@ -38,7 +38,7 @@ function Header() {
   return (
     <header className="top">
       <div className="wrap top-in">
-        <a href="#top" className="brand" onClick={() => setOpen(false)}>Faith Mbaire Ng'ethe</a>
+        <a href="#top" className="brand" onClick={() => setOpen(false)}>{person.name}</a>
         <button className="burger" aria-expanded={open} aria-label="Menu" onClick={() => setOpen(!open)}>
           <span /><span /><span />
         </button>
@@ -120,7 +120,7 @@ function Ticker() {
 
 function About() {
   return (
-    <Section id="about" label="Overview" title="Recovering what was taken from the public">
+    <Section id="about" label="Professional profile" title="Law, governance and public accountability">
       <div className="about">
         <div>
           {overview.map((p, i) => <p key={p} data-reveal="rise" style={delay(i)}>{p}</p>)}
