@@ -1,5 +1,8 @@
 {
   "name": "faith-mbaire",
-  "compatibility_date": "2025-01-01",
+  "compatibility_date": "2026-10-01",
+  // dist/ is not committed, so wrangler builds it first. This keeps
+  // `npx wrangler deploy` working even when Cloudflare's Build command is blank.
+  "build": { "command": "npm run build" },
   "assets": { "directory": "./dist", "not_found_handling": "single-page-application" }
 }
