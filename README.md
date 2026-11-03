@@ -1,4 +1,4 @@
-# Faith Mbaire Ngethe: single-page site
+# CS Faith Mbaire Ng'ethe, OGW: single-page site
 
 React 19 + Vite 7, plain CSS. Built by SpenceTec and Logistics Limited.
 
@@ -18,7 +18,7 @@ npx wrangler deploy  # Cloudflare Workers, SPA fallback in wrangler.jsonc
 `wrangler deploy` runs the build itself (`build.command` in `wrangler.jsonc`), so Cloudflare's Build command can stay blank. Deploy command: `npx wrangler deploy`. Node version is set in `.node-version`.
 
 ## Motion
-All motion is plain CSS plus `src/motion.js`, with no animation library. Add `data-reveal` to an element to animate it in on scroll (`rise` by default, or `fade`, `lift`, `pop`, `slide`, `wipe`). Visitors with reduced motion turned on see everything without animation.
+All motion is plain CSS plus `src/motion.js`, with no animation library. Add `data-reveal` to an element to animate it in on scroll (`rise` by default, or `fade`, `lift`, `pop`, `slide`). Visitors with reduced motion turned on see everything without animation.
 
 ## Source
-Built from Faith's own CV site export (WYSIWYG Web Builder) and the professional profile supplied in November 2026. Nothing was added beyond that content.
+Built from Faith's own CV site export (WYSIWYG Web Builder) her CV, and the profile and client notes of November 2026. Nothing was added beyond that content.

@@ -1,7 +1,7 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useState } from 'react'
 import {
   person, contact, services, overview, stats, career, education,
-  certification, training, skills, gallery,
+  certification, training, professionalTraining, affiliations, highlights, skills,
 } from './content.js'
 import { useActiveSection, useCountUp, useReveal, useScrollMotion } from './motion.js'
 
@@ -9,9 +9,10 @@ const NAV = [
   ['about', 'About'],
   ['services', 'Services'],
   ['career', 'Career'],
+  ['highlights', 'Highlights'],
   ['education', 'Education'],
   ['training', 'Training'],
-  ['gallery', 'Gallery'],
+  ['affiliations', 'Affiliations'],
   ['contact', 'Contact'],
 ]
 
@@ -58,7 +59,7 @@ function Hero() {
     <section id="top" className="hero">
       <div className="wrap hero-in">
         <div className="hero-text">
-          <p className="label gold">{person.eyebrow}</p>
+          <p className="label gold">{person.credentials.map((c) => <span key={c}>{c}</span>)}</p>
           <h1>
             {person.name.split(' ').map((word, i) => (
               <Fragment key={word}>
@@ -76,7 +77,7 @@ function Hero() {
           </div>
         </div>
         <figure className="portrait">
-          <img src={person.photo} alt={`${person.name} seated at a conference table with a microphone`} />
+          <img src={person.photo} alt={`${person.plainName} seated at a conference table with a microphone`} />
         </figure>
       </div>
       <a className="cue" href="#about" aria-label="Scroll to overview"><span /></a>
@@ -136,8 +137,8 @@ function About() {
 
 function Services() {
   return (
-    <Section id="services" label="Services" title="How I can help">
-      <div className="cards">
+    <Section id="services" label="Services" title="Areas of practice">
+      <div className="cards three">
         {services.map((s, i) => (
           <article key={s.title} className="card" data-reveal="rise" style={delay(i, 0.11)}>
             <span className="num">0{i + 1}</span>
@@ -159,12 +160,41 @@ function Career() {
           <li key={r.title + r.dates} data-reveal="slide">
             <span className="dot" />
             <h3>{r.title}</h3>
-            <p className="meta">{r.dates} · {r.place}</p>
+            <p className="meta">{r.place ? `${r.dates} · ${r.place}` : r.dates}</p>
             {r.note && <p>{r.note}</p>}
           </li>
         ))}
       </ol>
-      <p className="earlier" data-reveal="fade"><strong>Earlier:</strong> {career.earlier.title}, {career.earlier.dates}. {career.earlier.note}</p>
+      <div className="earlier" data-reveal="fade">
+        <h3>Earlier career</h3>
+        <ul>
+          {career.earlier.map((e) => (
+            <li key={e.title}><b>{e.title}</b>, {e.org}<span className="meta">{e.dates}</span>{e.note && <span className="note">{e.note}</span>}</li>
+          ))}
+        </ul>
+      </div>
+    </Section>
+  )
+}
+
+function Highlights() {
+  return (
+    <Section id="highlights" label="Career highlights" title="Milestones in public service">
+      <div className="award" data-reveal="rise">
+        <span aria-hidden="true">OGW</span>
+        <div>
+          <h3>{highlights.award.title}</h3>
+          <p>{highlights.award.text}</p>
+        </div>
+      </div>
+      <ul className="hl">
+        {highlights.items.map((h, i) => (
+          <li key={h.title} data-reveal="rise" style={delay(i % 3, 0.11)}>
+            <h3>{h.title}</h3>
+            <p>{h.text}</p>
+          </li>
+        ))}
+      </ul>
     </Section>
   )
 }
@@ -211,41 +241,33 @@ function Training() {
           </article>
         ))}
       </div>
+      <div className="courses">
+        <h3 data-reveal="fade">Professional training</h3>
+        <ul>
+          {professionalTraining.map((t) => (
+            <li key={t.course} data-reveal="rise">
+              <span className="yr">{t.year}</span>
+              <div><b>{t.course}</b><p>{t.provider}</p></div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Section>
   )
 }
 
-function Gallery() {
-  const [active, setActive] = useState(null)
-  const [closing, setClosing] = useState(false)
-  useEffect(() => {
-    if (active === null) return
-    const k = (e) => { if (e.key === 'Escape') setClosing(true) }
-    window.addEventListener('keydown', k)
-    return () => window.removeEventListener('keydown', k)
-  }, [active])
-  useEffect(() => {
-    if (!closing) return
-    const t = setTimeout(() => { setActive(null); setClosing(false) }, 240)
-    return () => clearTimeout(t)
-  }, [closing])
+function Affiliations() {
   return (
-    <Section id="gallery" label="Gallery" title={gallery.heading}>
-      <div className="gal">
-        {gallery.items.map((g, i) => (
-          <button key={g.src} className="tile" data-reveal="wipe" style={delay(i % 3, 0.13)} onClick={() => setActive(i)}>
-            <img src={g.src} alt={g.alt} loading="lazy" style={{ objectPosition: g.pos }} />
-            <span>{g.caption}</span>
-          </button>
+    <Section id="affiliations" label="Affiliations" title="Professional memberships">
+      <ul className="aff">
+        {affiliations.map((f, i) => (
+          <li key={f.name} data-reveal="rise" style={delay(i % 2, 0.12)}>
+            <h3>{f.name}</h3>
+            <p className="meta">{f.role}</p>
+            {f.note && <p>{f.note}</p>}
+          </li>
         ))}
-      </div>
-      {active !== null && (
-        <div className={closing ? 'lightbox closing' : 'lightbox'} role="dialog" aria-modal="true" onClick={() => setClosing(true)}>
-          <img src={gallery.items[active].src} alt={gallery.items[active].alt} />
-          <p>{gallery.items[active].caption}</p>
-          <button aria-label="Close" onClick={() => setClosing(true)}>×</button>
-        </div>
-      )}
+      </ul>
     </Section>
   )
 }
@@ -304,9 +326,10 @@ export default function App() {
         <About />
         <Services />
         <Career />
+        <Highlights />
         <Education />
         <Training />
-        <Gallery />
+        <Affiliations />
         <Contact />
       </main>
       <footer className="foot">
