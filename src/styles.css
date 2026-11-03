@@ -206,6 +206,8 @@ form .btn { justify-self: start; }
   .courses li { gap: 12px; }
   .edu-card { flex-direction: column; gap: 14px; }
   .brand { font-size: 1.2rem; }
+  .hero .label { padding-left: 0; letter-spacing: .1em; font-size: .72rem; }
+  .hero .label::before { display: none; }
 }
 
 @media (max-width: 960px) {
