@@ -53,7 +53,7 @@ export const career = {
     { title: "Legal Officer II, Legal Officer I and Deputy Regional Manager", dates: "Jan 2012 to Dec 2018", place: "Central Region Office, Nyeri", note: "Led asset tracing teams, instituted civil recovery suits and defended the Commission in constitutional petitions and appeals. Served as an elected Trustee of the EACC Staff Retirement Benefit Scheme." },
   ],
   earlier: [
-    { title: "Senior Land Registration Officer", org: "Ministry of Lands, Housing and Urban Development", dates: "May 2006 to Aug 2011", note: "Served on the Sub-Committee on Harmonization of Land Laws in Kenya into the Land Bill and on the Task Force on Land Rent Information Management Systems automation." },
+    { title: "Senior Land Registration Officer", org: "Ministry of Lands, Housing and Urban Development", dates: "May 2006 to Aug 2011" },
     { title: "Associate Advocate", org: "Gachiri Kariuki & Kiai Advocates, Nyeri", dates: "Feb 2006 to May 2006" },
     { title: "Legal Assistant", org: "Balisharma & Balisharma Advocates, Nyeri", dates: "Sep 2003 to Dec 2005" },
   ],
@@ -70,7 +70,10 @@ export const highlights = {
     { title: "Strategy and institutional reform", text: "Took part in drafting the Commission's 2023 to 2028 Strategic Plan and developed the department's Enterprise Risk Management System." },
     { title: "Justice sector reform", text: "Member of the National Council on Administrative Justice Anti-Corruption Committee and Civil Justice Reforms Committee, and of the Anti-Corruption Division of the High Court Court Users Committee." },
     { title: "Regional and international engagement", text: "Briefed a delegation from the Presidency of South Africa on Kenya's anti-corruption framework, trained Zambia Anti-Corruption Commission officers, and presented to ESAAMLG assessors on investigations and asset recovery." },
+    { title: "Bilateral negotiations", text: "Participated in the negotiations for agreements between the Government of Kenya and the Government of the Hong Kong Special Administrative Region on mutual legal assistance in criminal matters and the surrender of fugitive offenders." },
+    { title: "African asset recovery", text: "Participated in the development of the African Asset Recovery Practitioners' Forum Charter." },
     { title: "Building the next generation", text: "Mentors legal officers across 11 regional offices and held mentorship workshops on asset recovery for about 70 officers in four regional offices." },
+    { title: "Land law reform", text: "Served on the Sub-Committee on Harmonization of Land Laws in Kenya into the Land Bill and on the Task Force on Land Rent Information Management Systems automation." },
   ],
 }
 
@@ -94,6 +97,8 @@ export const training = [
 ]
 
 export const professionalTraining = [
+  { year: "2025", provider: "Centre for Parliamentary Studies and Training (CPST), Parliament of Kenya", course: "Training of Trainers Programme" },
+  { year: "", provider: "OECD International Academy for Tax and Financial Crime Investigation, Guardia di Finanza", course: "Asset Recovery: Freezing and Seizing Assets (Specialty) Programme" },
   { year: "2019", provider: "China Academy for Discipline Inspection and Supervision (CADIS)", course: "Seminar on Anti-Corruption for Developing Countries" },
   { year: "2017", provider: "College of Insurance", course: "Trustee Development Programme Kenya (TDPK)" },
   { year: "2017", provider: "Kenya School of Government", course: "Strategic Leadership Development Programme" },
